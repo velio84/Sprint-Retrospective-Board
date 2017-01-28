@@ -11,7 +11,7 @@ const addBoardItem = ( req, res ) => {
   const query = createPushSectionItemQuery( id, section, newBoardItem )
 
   query.exec()
-    .then( () => res.sendStatus( 200 ) )
+    .then( () => res.send( newBoardItem ) )
     .catch( () => res.sendStatus( 400 ) )
 }
 

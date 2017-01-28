@@ -3,7 +3,14 @@ import loadingStatuses from '../loading-statuses'
 import Axios from 'axios'
 
 const { LOADING, LOADED, LOAD_ERROR } = loadingStatuses
-const { LOAD_BOARDS, TOGGLE_ADD_BOARD_VIEW } = actionTypes
+const {
+  ADD_BOARD,
+  DELETE_BOARD,
+  LOAD_BOARDS,
+  TOGGLE_ADD_BOARD_VIEW,
+  ADD_BOARD_ITEM,
+  DELETE_BOARD_ITEM
+} = actionTypes
 
 const boardsBaseURL = 'boards'
 
@@ -31,17 +38,33 @@ const loadBoardsPromise = ( url, dispatch ) => {
 
 
 
-export const addBoard = ( board ) => dispatch => {
+export const addBoard = ( board ) => ( dispatch, getState ) => {
+  const { boards } = getState()
+
   Axios.post( `${ boardsBaseURL }`, board )
-    .then( () => {
-      loadBoardsPromise( boardsBaseURL, dispatch )
+    .then( ( response ) => {
+      dispatch({
+        type: ADD_BOARD,
+        payload: {
+          boards,
+          board: response.data
+        }
+      })
     })
 }
 
-export const deleteBoard = ( boardId ) => dispatch => {
+export const deleteBoard = ( boardId ) => ( dispatch, getState ) => {
+  const { boards } = getState()
+
   Axios.post( `${ boardsBaseURL }/${ boardId }` )
     .then( () => {
-      loadBoardsPromise( boardsBaseURL, dispatch )
+      dispatch({
+        type: DELETE_BOARD,
+        payload: {
+          boards,
+          boardId
+        }
+      })
     })
 }
 
@@ -56,17 +79,37 @@ export const loadBoards = () => dispatch => {
   loadBoardsPromise( boardsBaseURL, dispatch )
 }
 
-export const addBoardItem = ( boardId, section, item ) => dispatch => {
+export const addBoardItem = ( boardId, section, item ) => ( dispatch, getState ) => {
+  const { boards } = getState()
+
   Axios.post( `${ boardsBaseURL }/${ boardId }/${ section }`, item )
-    .then( () => {
-      loadBoardsPromise( boardsBaseURL, dispatch )
+    .then( ( response ) => {
+      dispatch({
+        type: ADD_BOARD_ITEM,
+        payload: {
+          boardId,
+          boards,
+          section,
+          item: response.data
+        }
+      })
     })
 }
 
-export const deleteBoardItem = ( boardId, section, itemId ) => dispatch => {
+export const deleteBoardItem = ( boardId, section, itemId ) => ( dispatch, getState ) => {
+  const { boards } = getState()
+
   Axios.post( `${ boardsBaseURL }/${ boardId }/${ section }/${ itemId }` )
     .then( () => {
-      loadBoardsPromise( boardsBaseURL, dispatch )
+      dispatch({
+        type: DELETE_BOARD_ITEM,
+        payload: {
+          boardId,
+          boards,
+          section,
+          itemId
+        }
+      })
     })
 }
 

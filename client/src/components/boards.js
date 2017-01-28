@@ -20,8 +20,8 @@ const Boards = ( { boards } ) => {
       <div className="boards">
         <ul>
         {
-          boards.data.reverse().map( board => {
-            return <Board board={ board } key={ board._id }></Board>
+          boards.data.map( ( board, index ) => {
+            return <Board board={ board } key={ board._id } isInitiallyExpanded={ index === 0 ? true : false } ></Board>
           })
         }
         </ul>

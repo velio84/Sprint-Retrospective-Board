@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import boardActions from '../js/actions/board-actions'
 import '../css/new-board.css';
 
-class NewBoard extends Component {
+class AddBoard extends Component {
   constructor( props ) {
     super( props )
 
@@ -50,7 +50,7 @@ class NewBoard extends Component {
   }
 }
 
-NewBoard.propTypes = {
+AddBoard.propTypes = {
   isAddBoardPanelHidden: PropTypes.bool.isRequired,
   toggleAddBoardView: PropTypes.func.isRequired,
   addBoard: PropTypes.func.isRequired
@@ -62,4 +62,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect( mapStateToProps, boardActions )( NewBoard )
+export default connect( mapStateToProps, boardActions )( AddBoard )

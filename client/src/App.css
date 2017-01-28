@@ -17,6 +17,7 @@ h3, h4, h5, h6 {
 
 .App .main-nav {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .App .main-nav .add-new-board-button {
@@ -35,7 +36,7 @@ h3, h4, h5, h6 {
 }
 
 .App .danger {
-  background-color: #f45d01 !important;
+  background-color: red !important;
   color: white;
 }
 

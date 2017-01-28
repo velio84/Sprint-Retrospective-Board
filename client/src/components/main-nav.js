@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import boardActions from '../js/actions/board-actions'
-import NewBoard from './new-board'
+import AddBoard from './add-board'
 
 class MainNav extends Component {
   componentWillMount() {
@@ -14,7 +14,7 @@ class MainNav extends Component {
 
     return (
       <div className="main-nav">
-        <NewBoard />
+        <AddBoard />
         { AddBoardButton }
       </div>
     )

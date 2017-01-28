@@ -9,7 +9,7 @@ class Board extends Component {
   constructor( props ) {
     super( props )
 
-    this.state = { isBoardExpanded: false }
+    this.state = { isBoardExpanded: props.isInitiallyExpanded }
 
     this.onDeleteBoard = this.onDeleteBoard.bind( this )
     this.onExpandClick = this.onExpandClick.bind( this )
@@ -65,7 +65,8 @@ class Board extends Component {
 
 
 Board.propTypes = {
-  board: PropTypes.object,
+  board: PropTypes.object.isRequired,
+  isInitiallyExpanded: PropTypes.bool.isRequired,
   deleteBoard: PropTypes.func.isRequired
 }
 

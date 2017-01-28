@@ -19,7 +19,7 @@ const createBoard = ( req, res ) => {
   })
 
   newBoard.save()
-    .then( () => res.sendStatus( 200 ) )
+    .then( () => res.send( newBoard ) )
     .catch( () => res.sendStatus( 400 ) )
 }
 
