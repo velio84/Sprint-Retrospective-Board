@@ -1,0 +1,48 @@
+body {
+  background-color: #564256;
+}
+
+h1, h2 {
+  color: #E8E8E8;
+}
+
+h3, h4, h5, h6 {
+  color: #FC814A;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.App .main-nav {
+  text-align: center;
+}
+
+.App .main-nav .add-new-board-button {
+  height: 40px;
+  width: 200px;
+  background-color: #FC814A;
+}
+
+.App ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.App .hidden {
+  display: none;
+}
+
+.App .danger {
+  background-color: #f45d01 !important;
+  color: white;
+}
+
+.App input[type="button"] {
+  margin: 5px;
+  padding: 5px;
+  color: #ffffff;
+  border: 1px solid #6E6B71;
+  border-radius: 5px;
+}

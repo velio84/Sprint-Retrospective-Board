@@ -1,0 +1,61 @@
+.board-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  min-width: 300px;
+  margin: 20px;
+}
+
+.board-section ul li {
+  color: #E8E8E8;
+  border: 1px solid #6E6B71;
+}
+
+.board-section input[type="button"] {
+  background-color: #FC814A;
+}
+
+.board-section.good ul li {
+  background-color: #96939B;
+}
+
+.board-section.bad ul li {
+  background-color: #96939B;
+}
+
+.board-section.actions ul li {
+  background-color: #96939B;
+}
+
+.board-section .board-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.board-section .board-item-delete {
+  align-self: flex-end;
+  margin: -10px !important;
+  border: none !important;
+  z-index: 1;
+  width: 25px;
+  visibility: hidden;
+}
+
+.board-section .board-item:hover .board-item-delete {
+  visibility: visible;
+}
+
+.board-section .board-item .item-text {
+  font-size: 14px;
+}
+
+.board-section .board-item .item-author {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+  color: #564256;
+}

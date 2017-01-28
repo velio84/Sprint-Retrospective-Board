@@ -1,0 +1,33 @@
+.board {
+  margin-bottom: 50px;
+}
+
+.board .board-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board .board-header:hover {
+  background-color: #FC814A;
+}
+
+.board .board-header:hover .board-delete-button {
+  visibility: visible;
+}
+
+.board.shrinked {
+  margin-bottom: auto;
+}
+
+.board .board-delete-button {
+  width: 25px;
+  margin: -10px;
+  border: none;
+  visibility: hidden;
+}
+
+.board .board-sections {
+  display: flex;
+  flex-wrap: wrap;
+}

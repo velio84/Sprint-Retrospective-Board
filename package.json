@@ -1,0 +1,22 @@
+{
+  "name": "fun-retro-deluxe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon\" \"cd client && npm start\""
+  },
+  "keywords": [],
+  "author": "Velichko Golev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.7"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "nodemon": "^1.11.0"
+  }
+}
